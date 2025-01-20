@@ -1,0 +1,106 @@
+/* Tailwind Base, Components, and Utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Link Styles */
+a {
+  @apply font-medium text-indigo-500 hover:text-indigo-400 no-underline transition-colors duration-200;
+}
+
+/* Body Styles */
+body {
+  @apply bg-gray-900 text-white flex min-h-screen min-w-[320px] flex-col items-center justify-start py-8 px-4;
+}
+
+/* Heading Styles */
+h1 {
+  @apply text-4xl font-semibold text-center leading-tight mb-8;
+}
+
+/* Button Styles - Black Background */
+button {
+  @apply rounded-xl border-2 border-transparent py-2 px-6 text-base font-medium bg-black text-white hover:bg-gray-800 cursor-pointer transition-all duration-300;
+}
+
+button:hover {
+  @apply border-gray-600;
+}
+
+button:focus, button:focus-visible {
+  @apply outline-none ring-4 ring-gray-500;
+}
+
+/* Input and Textarea Styles */
+input,
+textarea {
+  @apply w-full p-4 mb-4 rounded-lg border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500;
+}
+
+input:focus,
+textarea:focus {
+  @apply bg-gray-700;
+}
+
+/* Light Mode Styles */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    @apply text-indigo-600;
+  }
+
+  button {
+    @apply bg-black hover:bg-gray-800 text-white;
+  }
+
+  input,
+  textarea {
+    @apply border-gray-300 bg-white text-black placeholder-gray-500;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+/* Card Container for Each Paste (Card-Like UI) */
+.paste-card {
+  @apply bg-gray-800 border border-gray-700 rounded-xl p-6 mb-6 shadow-md hover:shadow-lg transition-shadow duration-300;
+}
+
+.paste-card-title {
+  @apply text-xl font-semibold text-indigo-300 mb-2;
+}
+
+.paste-card-content {
+  @apply text-gray-400 mb-4;
+}
+
+.paste-card-footer {
+  @apply flex justify-between items-center text-sm text-gray-500;
+}
+
+.paste-card-footer button {
+  @apply text-indigo-500 hover:text-indigo-400 transition-colors duration-200;
+}
+
+.paste-card-footer button:hover {
+  @apply text-indigo-400;
+}
